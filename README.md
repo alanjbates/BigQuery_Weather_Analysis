@@ -4,7 +4,7 @@ Here is an example of the power of BigQuery and SQL for feature engineering.
 
 This will give you a record of weather data, for every day, for every location in your dataset.
 
-It can be used as input into further analysis or data products.
+It can be used as input into further analysis or data products.  For the example here I have a table with all 50 US state capitals and lat/lon.  You can use this SQL with any location dataset you have that includes lat/lon values.
 
 ![Image of Architecture](https://raw.githubusercontent.com/alanjbates/BigQuery_Weather_Analysis/master/images/weather_feature.png)
 
