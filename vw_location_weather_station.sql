@@ -13,7 +13,7 @@ FROM (
                     	ST_GEOGPOINT(capitals.longitude, capitals.latitude),
                     	ST_GEOGPOINT( stations.lon , stations.lat )
                     	)
-                    	* 0.00062137 AS Distance --convert meters to miles --calc distance between each of
+                    	* 0.00062137 AS Distance --convert meters to miles
         	,CONCAT(capitals.city, ', ', capitals.state) AS location
         	,stations.usaf
           ,stations.wban
