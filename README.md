@@ -8,7 +8,7 @@ It can be used as input into further analysis or data products.
 
 ![Image of Architecture](https://raw.githubusercontent.com/alanjbates/BigQuery_Weather_Analysis/master/images/weather_feature.png)
 
-### I LOVE CROSS JOINS!
+### Cross Joins
 Cross join calendar and location together to force a row for every day for every location.  We also cross join every location with every weather station in the lower 48 states.  Using the power of BigQuery we are able to EXPLODE the row count and calculations without worrying about spool space limitations and query time.
 
 ### BigQuery Geo Functions
@@ -23,6 +23,8 @@ We are pulling data from the year 2000 until current year with the \* in here: \
 
 
 ## RESULTS!
+With all of this data engineering done in SQL and wrapped into a BigQuery view, we have enabled weather based analytics for data science and analytics.
+
 Here is a sample of the results for one location:
 
 ![Image of Architecture](https://raw.githubusercontent.com/alanjbates/BigQuery_Weather_Analysis/master/images/weather_feature_results.png)
