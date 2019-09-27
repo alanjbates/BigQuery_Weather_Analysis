@@ -4,6 +4,8 @@ This view creates a driver table that forces a row for each location, for each d
 
 SELECT
 CONCAT(city, ', ', state) AS Location
+, loc_driver.latitude 
+, loc_driver.longitude 
 ,cal_driver.cal_date
 
 FROM `abates-dsc.weather_analysis.calendar` cal_driver
@@ -12,4 +14,4 @@ FROM `abates-dsc.weather_analysis.calendar` cal_driver
     
 WHERE EXTRACT(YEAR FROM cal_driver.cal_date) BETWEEN EXTRACT(YEAR FROM CURRENT_DATE)-1 AND EXTRACT(YEAR FROM CURRENT_DATE)
 AND cal_driver.cal_date < CURRENT_DATE
-GROUP BY 1,2
+GROUP BY 1,2,3,4
