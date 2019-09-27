@@ -4,7 +4,13 @@ This view returns the final result of weather location day.
 SELECT
 --Location and Date
 driver.location
+,driver.longitude
+,driver.latitude
 ,driver.cal_date 
+
+--Weather Station
+--,CONCAT(w.stn,w.wban) AS StationId
+--,CAST(CONCAT(w.year,'-', w.mo, '-',w.da) AS DATE) AS ObservationDate
 
 --Temp Info
 ,COALESCE(l1.temp, l2.temp, l3.temp) AS AverageTemp
@@ -74,6 +80,6 @@ FROM `abates-dsc.weather_analysis.vw_location_date_driver` driver
             AND l3.location = driver.location
             AND l3.ROW_RANK = 3
             
---WHERE driver.location = 'Columbus, Ohio' --testing
-GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27
+WHERE driver.location = 'Columbus, Ohio'
+GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29
 ORDER BY driver.cal_date DESC
